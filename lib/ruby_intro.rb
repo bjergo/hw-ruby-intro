@@ -62,14 +62,45 @@ end
 
 def hello(name)
   # YOUR CODE HERE
+  return "Hello, " + name
+
 end
 
 def starts_with_consonant? s
   # YOUR CODE HERE
+  starts_with_consonant = false
+  if s.size == 0
+    starts_with_consonant =  false 
+  else
+    starts_with_consonant =  s[0].match(/[BCDFGHJKLMNPQRSTVWXYSbcdfghjklmnpqrstvwxyz]/)
+  end
+  return starts_with_consonant
 end
 
 def binary_multiple_of_4? s
   # YOUR CODE HERE
+binary_multiple_of_4 = false
+lastbit = false
+nextlastbit = false
+if s[s.length-1] == '0'
+  lastbit = true
+end
+if s[s.length-2] == '0'
+  nextlastbit = true
+end
+if lastbit == true && nextlastbit == true
+  binary_multiple_of_4 = true
+end
+
+for bit in s.split('')
+  if bit != '0' && bit != '1'
+    binary_multiple_of_4 = false
+  end
+end
+
+
+return binary_multiple_of_4
+
 end
 
 # Part 3
