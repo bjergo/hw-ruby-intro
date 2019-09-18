@@ -107,4 +107,42 @@ end
 
 class BookInStock
 # YOUR CODE HERE
+@@price
+@@isbn
+
+def initialize(isbn, price)
+if price > 0
+  @price= price
+else
+  raise ArgumentError
+end
+
+if isbn == ""
+  raise ArgumentError
+else
+  @isbn= isbn
+end
+
+
+end
+
+
+def price=
+  @price
+end
+
+def isbn=
+  @isbn
+end
+
+attr_accessor :price, :isbn
+
+def price_as_string
+price_as_string = '$'
+price_as_string = price_as_string + ('%.2f' % @price.to_s)
+
+return price_as_string
+end
+
+
 end
